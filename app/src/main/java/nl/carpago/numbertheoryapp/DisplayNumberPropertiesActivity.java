@@ -3,9 +3,18 @@ package nl.carpago.numbertheoryapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
+import nl.carpago.numbertheoryapp.tools.NumberTheoryService;
+
 public class DisplayNumberPropertiesActivity extends AppCompatActivity {
+
+    private NumberTheoryService service;
+
+    public DisplayNumberPropertiesActivity() {
+        this.service = new NumberTheoryService();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +27,9 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
 
         TextView textView = (TextView) this.findViewById(R.id.numberText);
         textView.setText(String.format("Properties of '%d'", number));
+
+        CheckBox checkBoxEven = (CheckBox) this.findViewById(R.id.checkBoxEven);
+        checkBoxEven.setChecked(this.service.isEven(number));
 
     }
 }
