@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import nl.carpago.numbertheoryapp.tools.NumberTheoryService;
 
 public class DisplayNumberPropertiesActivity extends AppCompatActivity {
@@ -31,5 +34,14 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
         CheckBox checkBoxEven = (CheckBox) this.findViewById(R.id.checkBoxEven);
         checkBoxEven.setChecked(this.service.isEven(number));
 
+        CheckBox checkboxPrime = (CheckBox) this.findViewById(R.id.checkBoxPrime);
+        checkboxPrime.setChecked(this.service.isPrime(number));
+
+        // prime factors
+        TextView primeFactorsTextView = (TextView) this.findViewById(R.id.primeFactorsTextView);
+        primeFactorsTextView.setText(this.service.po(number).toString());
+
     }
+
+
 }

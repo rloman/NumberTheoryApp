@@ -31,4 +31,36 @@
         app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPrime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:text="Prime"
+        app:layout_constraintEnd_toStartOf="@+id/numberText"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEven" />
+
+    <TextView
+        android:id="@+id/primeFactorsLabel"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Prime Factors: "
+        app:layout_constraintStart_toStartOf="@+id/checkBoxPrime"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPrime" />
+
+    <TextView
+        android:id="@+id/primeFactorsTextView"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="196dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/primeFactorsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/numberText" />
 </android.support.constraint.ConstraintLayout>
