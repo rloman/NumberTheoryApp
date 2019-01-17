@@ -7,6 +7,26 @@
     tools:context=".DisplayNumberPropertiesActivity">
 
     <TextView
+        android:id="@+id/divisorsLabel"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="108dp"
+        android:text="Divisors:"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxPrime"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPrime" />
+
+    <TextView
+        android:id="@+id/divisorsTextView"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="256dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/primeFactorsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/numberText" />
+
+    <TextView
         android:id="@+id/numberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,9 +68,10 @@
     <TextView
         android:id="@+id/primeFactorsLabel"
         android:layout_width="0dp"
-        android:layout_height="24dp"
+        android:layout_height="21dp"
         android:layout_marginTop="48dp"
         android:text="Prime Factors: "
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="@+id/checkBoxPrime"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxPrime" />
 

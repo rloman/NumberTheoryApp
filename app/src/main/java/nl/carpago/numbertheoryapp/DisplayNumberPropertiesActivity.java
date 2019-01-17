@@ -39,7 +39,27 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
 
         // prime factors
         TextView primeFactorsTextView = (TextView) this.findViewById(R.id.primeFactorsTextView);
-        primeFactorsTextView.setText(this.service.po(number).toString());
+        List<Integer> primeFactors = this.service.po(number);
+
+        // maf moet naar Java 8 en dat wil ik ook hier!
+        String formattedString ="";
+        for(Integer element: primeFactors) {
+            formattedString += element.toString()+".";
+        }
+        formattedString = formattedString.substring(0, formattedString.length()-1);
+
+        primeFactorsTextView.setText(formattedString);
+
+        // crap need Java 8
+        List<Integer> divisors = this.service.divisors(number);
+        formattedString = "";
+        for(int element: divisors) {
+            formattedString += element +".";
+        }
+        formattedString = formattedString.substring(0, formattedString.length()-1);
+        TextView divisorsTextiew = (TextView) this.findViewById(R.id.divisorsTextView);
+        divisorsTextiew.setText(formattedString);
+
 
     }
 

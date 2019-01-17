@@ -6,15 +6,15 @@ import java.util.List;
 public class NumberTheoryService {
 
     public boolean isEven(int n) {
-        return n %2 == 0;
+        return n % 2 == 0;
     }
 
     public boolean isPrime(int n) {
-        if(n==2) {
+        if (n == 2) {
             return true;
         }
-        for(int i = 2;i<Math.sqrt(n);i++) {
-            if(n % i == 0) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
                 return false;
             }
         }
@@ -35,10 +35,9 @@ public class NumberTheoryService {
         List<Integer> result = new ArrayList<>();
 
         //simplest case!
-        if(lastFactor == n) {
+        if (lastFactor == n) {
             result.add(lastFactor);
-        }
-        else {
+        } else {
             // if n is divisible to lastFactor add it to the List of factors and recursively po
 
             if (n % lastFactor == 0) {
@@ -53,6 +52,20 @@ public class NumberTheoryService {
                 if (lastFactor < n) {
                     return po(++lastFactor, n);
                 }
+            }
+
+        }
+
+        return result;
+    }
+
+    public List<Integer> divisors(int n) {
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                result.add(i);
             }
 
         }
