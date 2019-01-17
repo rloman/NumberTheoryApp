@@ -62,7 +62,8 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
         TextView divisorsTextiew = (TextView) this.findViewById(R.id.divisorsTextView);
         divisorsTextiew.setText(formattedString);
 
-
+        CheckBox checkboxPerfectNumber = (CheckBox) this.findViewById(R.id.perfectNumberCheckbox);
+        checkboxPerfectNumber.setChecked(sumOfDivisors == number);
     }
 
 
