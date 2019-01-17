@@ -52,9 +52,11 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
 
         // crap need Java 8
         List<Integer> divisors = this.service.divisors(number);
+        int sumOfDivisors = 0;
         formattedString = "";
         for(int element: divisors) {
             formattedString += element +".";
+            sumOfDivisors += element;
         }
         formattedString = formattedString.substring(0, formattedString.length()-1);
         TextView divisorsTextiew = (TextView) this.findViewById(R.id.divisorsTextView);
