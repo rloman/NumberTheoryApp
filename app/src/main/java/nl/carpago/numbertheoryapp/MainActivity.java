@@ -26,4 +26,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void setRandom(View view) {
+        int random = (int) (1+ Math.random()*1000);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        editText.setText(String.valueOf(random));
+    }
 }

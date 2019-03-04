@@ -39,9 +39,17 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
 
         // prime factors
         TextView primeFactorsTextView = (TextView) this.findViewById(R.id.primeFactorsTextView);
-        primeFactorsTextView.setText(this.service.po(number).toString());
+        List<Integer> primeFactors = this.service.po(number);
 
+        primeFactorsTextView.setText(primeFactors.toString());
+
+        List<Integer> divisors = this.service.divisors(number);
+
+        TextView divisorsTextiew = (TextView) this.findViewById(R.id.divisorsTextView);
+        divisorsTextiew.setText(divisors.toString());
+
+        CheckBox checkboxPerfectNumber = (CheckBox) this.findViewById(R.id.perfectNumberCheckbox);
+        checkboxPerfectNumber.setChecked(this.service.isPerfectNumber(number));
     }
-
 
 }
