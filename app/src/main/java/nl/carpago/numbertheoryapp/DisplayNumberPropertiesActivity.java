@@ -41,30 +41,15 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
         TextView primeFactorsTextView = (TextView) this.findViewById(R.id.primeFactorsTextView);
         List<Integer> primeFactors = this.service.po(number);
 
-        // maf moet naar Java 8 en dat wil ik ook hier!
-        String formattedString ="";
-        for(Integer element: primeFactors) {
-            formattedString += element.toString()+".";
-        }
-        formattedString = formattedString.substring(0, formattedString.length()-1);
+        primeFactorsTextView.setText(primeFactors.toString());
 
-        primeFactorsTextView.setText(formattedString);
-
-        // crap need Java 8
         List<Integer> divisors = this.service.divisors(number);
-        int sumOfDivisors = 0;
-        formattedString = "";
-        for(int element: divisors) {
-            formattedString += element +".";
-            sumOfDivisors += element;
-        }
-        formattedString = formattedString.substring(0, formattedString.length()-1);
+
         TextView divisorsTextiew = (TextView) this.findViewById(R.id.divisorsTextView);
-        divisorsTextiew.setText(formattedString);
+        divisorsTextiew.setText(divisors.toString());
 
         CheckBox checkboxPerfectNumber = (CheckBox) this.findViewById(R.id.perfectNumberCheckbox);
-        checkboxPerfectNumber.setChecked(sumOfDivisors == number);
+        checkboxPerfectNumber.setChecked(this.service.isPerfectNumber(number));
     }
-
 
 }

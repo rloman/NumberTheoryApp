@@ -72,4 +72,12 @@ public class NumberTheoryService {
 
         return result;
     }
+
+    public boolean isPerfectNumber(int n) {
+        int sumOfDivisors = 0;
+        for(int element: this.divisors(n)) {
+            sumOfDivisors += element;
+        }
+        return sumOfDivisors == n;
+    }
 }
