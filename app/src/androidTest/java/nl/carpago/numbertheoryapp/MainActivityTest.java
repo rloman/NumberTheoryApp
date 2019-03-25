@@ -5,6 +5,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -29,11 +30,9 @@ public class MainActivityTest {
         MainActivity activity = rule.getActivity();
         View viewById = activity.findViewById(R.id.editText);
         assertThat(viewById,notNullValue());
-        assertThat(viewById, instanceOf(ListView.class));
-        ListView listView = (ListView) viewById;
-        ListAdapter adapter = listView.getAdapter();
-        assertThat(adapter, instanceOf(ArrayAdapter.class));
-        assertThat(adapter.getCount(), greaterThan(5));
+        assertThat(viewById, instanceOf(EditText.class));
+
+        
 
     }
 }
