@@ -1,12 +1,11 @@
 package nl.carpago.numbertheoryapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import nl.carpago.numbertheoryapp.tools.NumberTheoryService;
