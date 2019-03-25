@@ -28,10 +28,10 @@ public class DisplayNumberPropertiesActivity extends AppCompatActivity {
 
         int number = intent.getIntExtra(MainActivity.NUMBER_KEY, 0);
 
-        TextView textView = (TextView) this.findViewById(R.id.numberText);
+        TextView textView = this.findViewById(R.id.numberText);
         textView.setText(String.format("Properties of '%d'", number));
 
-        CheckBox checkBoxEven = (CheckBox) this.findViewById(R.id.checkBoxEven);
+        CheckBox checkBoxEven = this.findViewById(R.id.checkBoxEven);
         checkBoxEven.setChecked(this.service.isEven(number));
 
         CheckBox checkboxPrime = (CheckBox) this.findViewById(R.id.checkBoxPrime);

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public void sendNumber(View view) {
         Intent intent = new Intent(this, DisplayNumberPropertiesActivity.class);
 
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = findViewById(R.id.editText);
         int number = Integer.valueOf(editText.getText().toString());
         intent.putExtra(NUMBER_KEY, number);
 
