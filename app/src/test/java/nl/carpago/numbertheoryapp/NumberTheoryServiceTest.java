@@ -12,7 +12,7 @@ public class NumberTheoryServiceTest {
 
     private NumberTheoryService service;
 
-    public  NumberTheoryServiceTest() {
+    public NumberTheoryServiceTest() {
         this.service = new NumberTheoryService();
     }
 
@@ -29,7 +29,4 @@ public class NumberTheoryServiceTest {
         assertTrue(this.service.isPrime(3));
         assertFalse(this.service.isPrime(8));
     }
-
-
-
 }
