@@ -5,6 +5,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -28,11 +29,9 @@ public class MainActivityTest {
     @Test
     public void ensureListViewIsPresent() throws Exception {
         MainActivity activity = rule.getActivity();
-        View viewById = activity.findViewById(R.id.editText);
+        EditText viewById = activity.findViewById(R.id.editText);
         assertThat(viewById,notNullValue());
         assertThat(viewById, instanceOf(EditText.class));
-
-        
 
     }
 }
